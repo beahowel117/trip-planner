@@ -1,4 +1,6 @@
 const mapboxgl = require("mapbox-gl");
+const buildMarker = require('./marker')
+
 
 mapboxgl.accessToken = "pk.eyJ1IjoibGlsbHlvaCIsImEiOiJjazV3cHB1a3gwMHZlM29yN3J6cjlxOWtxIn0.rKJNVJhadZ6cqy6Z-S5Tog";
 
@@ -8,3 +10,6 @@ const map = new mapboxgl.Map({
   zoom: 12, // starting zoom
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
+
+const marker = buildMarker("activity", [-74.009, 40.705])
+marker.addTo(map)
